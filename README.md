@@ -226,7 +226,3 @@ define('COUNTRY_METHOD', 'geoip');
 ├── composer.json      # Composer 依赖
 └── README.md          # 项目说明
 ```
-
-## 许可证
-
-MIT License
