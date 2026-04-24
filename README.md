@@ -2,6 +2,11 @@
 
 一个轻量级的 PHP 服务，用于获取访问者的真实 IP 地址和地理位置信息。支持多种 CDN 和代理环境。
 
+## 在线演示
+
+- https://ip.iusi.cn
+- https://ip.iusi.cn/?mode=full
+
 ## 特性
 
 - 🌐 支持多种 CDN（阿里云、Cloudflare、Nginx 等）
@@ -34,13 +39,7 @@ cp config.php config.php
 # 编辑 config.php 填入您的配置
 ```
 
-3. （可选）安装 GeoIP 依赖
-```bash
-composer install
-# 下载 GeoLite2-Country.mmdb 到项目根目录
-```
-
-4. （可选）导入数据库
+3. （可选）导入数据库
 ```bash
 # MySQL
 mysql -u root -p < setup.sql
@@ -94,7 +93,7 @@ define('COUNTRY_HEADERS', [
     'HTTP_X_COUNTRY_CODE'    // 其他
 ]);
 
-// GeoIP 方式
+// GeoIP 方式（需自行选择并安装 GeoIP 库）
 define('GEOIP_DATABASE', __DIR__ . '/GeoLite2-Country.mmdb');
 ```
 
@@ -202,15 +201,13 @@ server {
 
 ## GeoIP 使用
 
-1. 安装依赖
-```bash
-composer install
+如需使用 GeoIP 功能，请自行选择并安装合适的 GeoIP 库和数据库文件，然后：
+
+1. 修改 `geoip.php` 实现您的 GeoIP 查询逻辑
+2. 配置数据库文件路径
+```php
+define('GEOIP_DATABASE', __DIR__ . '/your-geoip-database.mmdb');
 ```
-
-2. 下载数据库
-
-访问 [MaxMind GeoLite2](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data) 下载 `GeoLite2-Country.mmdb`
-
 3. 启用 GeoIP
 ```php
 define('COUNTRY_METHOD', 'geoip');
@@ -233,7 +230,3 @@ define('COUNTRY_METHOD', 'geoip');
 ## 许可证
 
 MIT License
-
-## 贡献
-
-欢迎提交 Issue 和 Pull Request！
