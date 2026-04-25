@@ -30,7 +30,7 @@
 1. 克隆项目
 ```bash
 git clone https://github.com/weyeahh/get_client_ip.git
-cd ip-service
+cd get_client_ip
 ```
 
 2. 配置文件
