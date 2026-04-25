@@ -158,7 +158,7 @@ curl https://ipv6.example.com/
 server {
     listen 80;
     server_name your-domain.com;
-    root /path/to/ip-service;
+    root /path/to/get_client_ip;
     index index.php;
 
     location / {
