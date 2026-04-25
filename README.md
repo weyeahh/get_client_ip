@@ -29,7 +29,7 @@
 
 1. 克隆项目
 ```bash
-git clone https://github.com/your-username/ip-service.git
+git clone https://github.com/weyeahh/get_client_ip.git
 cd ip-service
 ```
 
